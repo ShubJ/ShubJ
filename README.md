@@ -29,12 +29,6 @@
 
 Most of my work lives in private company repos. The full story is on my [portfolio](https://shubhamjindal.vercel.app/).
 
-### My commits, as a city at night
-
-<p align="center">
-  <a name="profile-night-view" href="#profile-night-view"><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution calendar"/></a>
-</p>
-
 <p align="center">
   <a name="connect" href="#connect"><img src="./connect.svg?v=2" width="100%" alt="Set sail together: portfolio, LinkedIn, email"/></a>
 </p>
