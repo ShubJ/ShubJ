@@ -28,6 +28,10 @@ BRAND = {
     "telegram": "#26A5E4", "claude": "#D97757", "html5": "#E34F26",
     "css": "#663399", "redis": "#FF4438", "githubactions": "#2088FF",
     "express": "#FFFFFF", "github": "#FFFFFF",
+    "mongodb": "#47A248", "apachekafka": "#FFFFFF", "socketdotio": "#FFFFFF",
+    "amazonaws": "#FF9900", "amazonsqs": "#FF4F8B", "awslambda": "#FF9900",
+    "amazons3": "#569A31", "amazonec2": "#FF9900", "amazoncloudwatch": "#FF4F8B",
+    "linkedin": "#0A66C2", "leetcode": "#FFA116", "vercel": "#FFFFFF", "gmail": "#EA4335",
 }
 
 
@@ -119,10 +123,10 @@ def build_hero(portrait_b64: str, repo_count: int) -> str:
     W, H = 1000, 440
     u = "h"
     roles = [
-        "Full-stack developer, TypeScript first",
-        "Builds Telegram bots and AI agents",
-        "Backend APIs with auth that holds",
-        "Ships side projects every month",
+        "Tech Lead at Primathon Technologies",
+        "7+ years of distributed backend systems",
+        "Node.js \u00b7 TypeScript \u00b7 NestJS \u00b7 Kafka \u00b7 AWS",
+        "Built a 4-agent AI engineering pipeline",
     ]
     cycle = 12
     role_els = []
@@ -181,9 +185,9 @@ def build_hero(portrait_b64: str, repo_count: int) -> str:
 <filter id="h-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>"""
 
     meta = [
-        ("M0,6 a6,6 0 1 1 12,0 a6,6 0 1 1 -12,0 M6,0 v12 M0,6 h12", "@ShubJ"),
-        ("M6,0 l1.8,4 4.2,.4 -3.2,2.8 1,4.2 -3.8,-2.3 -3.8,2.3 1,-4.2 -3.2,-2.8 4.2,-.4 z", f"{repo_count} public repos"),
-        ("M0,2 h12 v10 h-12 z M0,5 h12 M3,0 v3 M9,0 v3", "sailing since 2020"),
+        ("M6,13 C2,8 1,6 1,4.5 a5,5 0 0 1 10,0 C11,6 10,8 6,13 z M6,3 a1.6,1.6 0 1 0 .01,0", "Gurgaon, India"),
+        ("M1,12 V3 h6 v9 M7,6 h4 v6 M0,12 h12 M3,5 h2 M3,8 h2", "Primathon Technologies"),
+        ("M0,2 h12 v10 h-12 z M0,5 h12 M3,0 v3 M9,0 v3", "7+ yrs backend"),
     ]
     meta_els, mx = [], 48
     for d, label in meta:
@@ -225,8 +229,8 @@ def build_hero(portrait_b64: str, repo_count: int) -> str:
 {"".join(role_els)}
 
 <text class="gro" font-size="16" fill="{TEXT}" opacity=".85">
-  <tspan x="48" y="290">I build Telegram bots, AI agents and TypeScript backends,</tspan>
-  <tspan x="48" y="312">then actually ship them.</tspan>
+  <tspan x="48" y="290">I design event-driven backends and microservices that stay up</tspan>
+  <tspan x="48" y="312">under load, and AI workflows that ship code 3-5x faster.</tspan>
 </text>
 {"".join(meta_els)}
 
@@ -251,7 +255,7 @@ def build_hero(portrait_b64: str, repo_count: int) -> str:
       </rect>
       <text x="{nail_x}" y="{fy + fh + 30}" text-anchor="middle" class="pir" font-size="26" fill="{INK}" letter-spacing="4">CODE OR ALIVE</text>
       <text x="{nail_x}" y="{fy + fh + 54}" text-anchor="middle" class="mono" font-size="15" font-weight="700" fill="{INK}" letter-spacing="2">SHUBHAM JINDAL</text>
-      <text x="{nail_x}" y="{fy + fh + 86}" text-anchor="middle" class="pir" font-size="28" fill="#7a2a1a">{repo_count} REPOS SHIPPED</text>
+      <text x="{nail_x}" y="{fy + fh + 86}" text-anchor="middle" class="pir" font-size="28" fill="#7a2a1a">7+ YEARS AT SEA</text>
     </g>
   </g>
 </g>
@@ -259,7 +263,7 @@ def build_hero(portrait_b64: str, repo_count: int) -> str:
 
 </g>
 {card_border(u, W, H)}"""
-    return svg_doc(W, H, "Shubham Jindal, full-stack developer", defs, body)
+    return svg_doc(W, H, "Shubham Jindal, backend tech lead", defs, body)
 
 
 def tilted_ellipse(cx, cy, rx, ry, tilt_deg, phase_deg, steps=72):
@@ -296,9 +300,9 @@ def build_stack() -> str:
     u = "s"
     cx, cy = 250, 222
     orbits = [
-        (220, 96, -14, 30, ["typescript", "nodedotjs", "postgresql", "docker", "githubactions"]),
-        (168, 80, 18, 22, ["react", "telegram", "supabase"]),
-        (112, 56, 42, 15, ["claude", "git", "javascript"]),
+        (220, 96, -14, 30, ["nodedotjs", "nestjs", "mysql", "mongodb", "apachekafka"]),
+        (168, 80, 18, 22, ["redis", "amazonaws", "docker"]),
+        (112, 56, 42, 15, ["git", "claude", "socketdotio"]),
     ]
     orbit_paths, riders = [], []
     for rx, ry, tilt, dur, names in orbits:
@@ -309,8 +313,8 @@ def build_stack() -> str:
         for i, n in enumerate(names):
             pts = tilted_ellipse(cx, cy, rx, ry, tilt, 360 * i / len(names) + 20)
             kids = ""
-            if n == "react":
-                for j, moon in enumerate(["nextdotjs", "tailwindcss"]):
+            if n == "nodedotjs":
+                for j, moon in enumerate(["typescript", "javascript"]):
                     mp = tilted_ellipse(0, 0, 32, 32, 0, 180 * j, 36)
                     kids += orbiter(moon, mp, 6, r=9)
             riders.append(orbiter(n, pts, dur, children=kids))
@@ -326,15 +330,16 @@ def build_stack() -> str:
         rose.append(f'<path d="M{s1[0]:.1f},{s1[1]:.1f} L{tip[0]:.1f},{tip[1]:.1f} L{s2[0]:.1f},{s2[1]:.1f} Z" fill="{GOLD if k % 2 == 0 else "#b98a2e"}"/>')
 
     groups = [
-        ("FRONTEND", [("react", "React"), ("nextdotjs", "Next.js"), ("typescript", "TypeScript"), ("tailwindcss", "Tailwind")]),
-        ("BACKEND", [("nodedotjs", "Node.js"), ("nestjs", "NestJS"), ("express", "Express"), ("javascript", "JWT + RBAC")]),
-        ("DATA", [("postgresql", "PostgreSQL"), ("supabase", "Supabase"), ("mysql", "MySQL")]),
-        ("BOTS & AI", [("telegram", "Telegram bots"), ("claude", "Claude agents")]),
-        ("SHIP IT", [("docker", "Docker"), ("git", "Git"), ("githubactions", "Actions")]),
+        ("CORE", [("nodedotjs", "Node.js"), ("typescript", "TypeScript"), ("nestjs", "NestJS"), ("javascript", "JavaScript")]),
+        ("DATA & STREAMING", [("mysql", "MySQL"), ("mongodb", "MongoDB"), ("redis", "Redis"), ("apachekafka", "Kafka")]),
+        ("AWS", [("amazonsqs", "SQS"), ("amazons3", "S3"), ("amazonec2", "EC2"), ("awslambda", "Lambda"), ("amazoncloudwatch", "CloudWatch")]),
+        ("ARCHITECTURE", [(None, "Microservices"), (None, "Event-driven"), ("socketdotio", "WebSockets")]),
+        ("SHIP IT", [(None, "API gateway"), ("docker", "Docker"), ("githubactions", "CI/CD"), ("git", "Git")]),
+        ("AI", [("claude", "Multi-agent AI workflows")]),
     ]
     total = sum(len(c) for _, c in groups)
     T = total * 0.45
-    chips, gy, idx = [], 70, 0
+    chips, gy, idx = [], 52, 0
     for title, items in groups:
         chips.append(f'<text x="520" y="{gy}" class="mono" font-size="11" fill="{MUTED}" letter-spacing="2">{title.replace("&", "&amp;")}</text>')
         cx0 = 520
@@ -343,18 +348,18 @@ def build_stack() -> str:
             a = idx / total
             b = a + 1 / total
             kt = f"0;{a:.3f};{min(a + .02, 1):.3f};{min(b + .04, 1):.3f};1"
-            col = BRAND[name] if BRAND[name] not in ("#FFFFFF",) else "#cfd8e6"
+            col = GOLD if name is None else (BRAND[name] if BRAND[name] != "#FFFFFF" else "#cfd8e6")
             chips.append(
                 f'<g transform="translate({cx0:.0f},{gy + 9})">'
                 f'<rect width="{w:.0f}" height="26" rx="8" fill="#0f1c33" stroke="{col}" stroke-opacity=".25"/>'
                 f'<rect width="{w:.0f}" height="26" rx="8" fill="none" stroke="{col}" stroke-width="1.5" opacity="0">'
                 f'<animate attributeName="opacity" values="0;0;1;0;0" keyTimes="{kt}" dur="{T:.1f}s" begin="0s" repeatCount="indefinite"/></rect>'
-                f'<path d="{icon_path(name)}" fill="{col}" transform="translate(9,6) scale(.58)"/>'
-                f'<text x="27" y="17.5" class="mono" font-size="12" fill="{TEXT}">{label}</text></g>'
+                + (f'<circle cx="16" cy="13" r="4" fill="none" stroke="{col}" stroke-width="2"/>' if name is None else f'<path d="{icon_path(name)}" fill="{col}" transform="translate(9,6) scale(.58)"/>')
+                + f'<text x="27" y="17.5" class="mono" font-size="12" fill="{TEXT}">{label}</text></g>'
             )
             cx0 += w + 8
             idx += 1
-        gy += 68
+        gy += 58
 
     defs = card_defs(u, W, H) + f"""
 <radialGradient id="s-core" cx=".5" cy=".5" r=".5">
@@ -385,14 +390,14 @@ def build_stack() -> str:
     return svg_doc(W, H, "Tech stack", defs, body)
 
 
-def count_frames(x, y, final: int, size: int, color: str, frames: int = 10, dur: float = 1.6) -> str:
+def count_frames(x, y, final: int, size: int, color: str, suffix: str = "", frames: int = 10, dur: float = 1.6) -> str:
     out = []
     vals = [round(final * (k / (frames - 1)) ** 0.6) for k in range(frames)]
     for k, v in enumerate(vals):
         seq = ["1" if j == k else "0" for j in range(frames)]
         last = k == frames - 1
         out.append(
-            f'<text x="{x}" y="{y}" class="gro" font-weight="700" font-size="{size}" fill="{color}" opacity="{1 if last else 0}">{v}'
+            f'<text x="{x}" y="{y}" class="gro" font-weight="700" font-size="{size}" fill="{color}" opacity="{1 if last else 0}">{v}{suffix}'
             f'<animate attributeName="opacity" values="{";".join(seq)}" dur="{dur}s" begin="0s" fill="freeze" calcMode="discrete"/></text>'
         )
     return "".join(out)
@@ -401,13 +406,6 @@ def count_frames(x, y, final: int, size: int, color: str, frames: int = 10, dur:
 def build_crew(portrait_b64: str, data: dict) -> str:
     W, H = 1000, 450
     u = "c"
-    langs = data["languages"]
-    total = sum(langs.values())
-    rows = sorted(langs.items(), key=lambda kv: -kv[1])[:6]
-    rows = [("SQL" if k == "PLpgSQL" else k, v) for k, v in rows]
-    bots = sum(1 for r in data["repos"] if "bot" in r["name"].lower() or "assistant" in r["name"].lower())
-    repo_count = len([r for r in data["repos"] if not r["fork"] and r["name"] != "ShubJ"])
-
     bx, by, bw, bh = 70, 118, 240, 310
     pivot = (bx + bw / 2, 0)
     rnd = random.Random(3)
@@ -418,42 +416,51 @@ def build_crew(portrait_b64: str, data: dict) -> str:
         xx += wbar + rnd.choice([1, 2, 2, 3])
 
     kpis = [
-        (repo_count, "public repos", GOLD),
-        (bots, "bots afloat", TEAL),
-        (len(langs), "languages", SKY),
+        (7, "+", "years in backend", GOLD),
+        (4, "", "AI agents in my team", TEAL),
+        (90, "%+", "AI-assisted code", SKY),
     ]
     kpi_els = []
-    for i, (v, label, col) in enumerate(kpis):
+    for i, (v, suf, label, col) in enumerate(kpis):
         x = 400 + i * 190
         kpi_els.append(
             f'<rect x="{x}" y="40" width="175" height="92" rx="14" fill="#0f1c33" stroke="{col}" stroke-opacity=".35"/>'
-            + count_frames(x + 20, 96, v, 40, col)
+            + count_frames(x + 20, 96, v, 40, col, suf)
             + f'<text x="{x + 20}" y="118" class="mono" font-size="12" fill="{MUTED}">{label}</text>'
         )
 
-    bar_els = []
-    for i, (name, v) in enumerate(rows):
-        y = 182 + i * 24
-        pct = 100 * v / total
-        full = 250 * v / rows[0][1]
-        bar_els.append(
-            f'<text x="400" y="{y + 13}" class="mono" font-size="12" fill="{TEXT}">{name}</text>'
-            f'<rect x="500" y="{y + 2}" width="250" height="14" rx="7" fill="#15233d"/>'
-            f'<rect x="500" y="{y + 2}" width="{max(full, 6):.1f}" height="14" rx="7" fill="{GOLD}" opacity="{1 - i * .12:.2f}">'
-            f'<animate attributeName="width" values="0;0;{max(full, 6):.1f}" keyTimes="0;{.1 + i * .08:.2f};1" dur="1.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1"/></rect>'
-            f'<text x="762" y="{y + 13}" class="mono" font-size="12" fill="{MUTED}">{pct:.1f}%</text>'
+    voyages = [
+        ("2025 - now", "Tech Lead \u00b7 Primathon Technologies", "Multi-tenant app marketplace, zero-downtime DB migration"),
+        ("2020 - 2025", "Senior Software Developer \u00b7 QuickReply.ai", "Real-time WhatsApp messaging, Flow Builder workflow engine"),
+        ("2015 - 2019", "B.Tech, Computer Science \u00b7 GJUST, Hisar", "Where the voyage started"),
+    ]
+    voy_els = [
+        f'<line x1="496" y1="190" x2="496" y2="306" stroke="{GOLD}" stroke-opacity=".5" stroke-width="2" stroke-dasharray="116" stroke-dashoffset="0">'
+        f'<animate attributeName="stroke-dashoffset" values="116;116;0" keyTimes="0;.3;1" dur="1.8s" begin="0s" fill="freeze"/></line>',
+        f'<circle cx="496" cy="190" r="11" fill="none" stroke="{GOLD}" opacity=".6">'
+        f'<animate attributeName="r" values="6;14;6" dur="2s" begin="0s" repeatCount="indefinite"/>'
+        f'<animate attributeName="opacity" values=".6;0;.6" dur="2s" begin="0s" repeatCount="indefinite"/></circle>',
+    ]
+    for i, (yrs, title, sub) in enumerate(voyages):
+        y = 190 + i * 58
+        voy_els.append(
+            f'<text x="400" y="{y + 5}" class="mono" font-size="12" fill="{MUTED}">{yrs}</text>'
+            f'<circle cx="496" cy="{y}" r="6" fill="{BG}" stroke="{GOLD}" stroke-width="2"/>'
+            f'<circle cx="496" cy="{y}" r="2.5" fill="{GOLD if i == 0 else MUTED}"/>'
+            f'<text x="514" y="{y + 5}" class="gro" font-size="15" font-weight="700" fill="{TEXT}">{title}</text>'
+            f'<text x="514" y="{y + 24}" class="mono" font-size="11" fill="{MUTED}">{sub}</text>'
         )
 
     now_lines = [
-        ("BUILDING", "telegram-ai-assistant, multi-agent AI on Telegram"),
-        ("SHIPPED", "Stock-Signal-Bot, daily NSE signals"),
-        ("NEXT", "instagram-bot on Next.js + Supabase"),
+        "Built a 4-agent AI system: PM, TL, SDE and Reviewer",
+        "AI Telegram Sprint Planner for backlog and blockers",
+        "Founder-level recognition for critical platform work",
     ]
     now_els = []
-    for i, (k, v) in enumerate(now_lines):
-        y = 376 + i * 22
+    for i, v in enumerate(now_lines):
+        y = 380 + i * 22
         now_els.append(
-            f'<text x="400" y="{y}" class="mono" font-size="12"><tspan fill="{GOLD}">{k:<9}</tspan><tspan fill="{TEXT}">{v}</tspan></text>'
+            f'<text x="400" y="{y}" class="mono" font-size="12"><tspan fill="{GOLD}">\u25b8 </tspan><tspan fill="{TEXT}">{v}</tspan></text>'
         )
 
     defs = card_defs(u, W, H) + f"""
@@ -492,7 +499,7 @@ def build_crew(portrait_b64: str, data: dict) -> str:
     <g clip-path="url(#c-cardclip)">
       <rect x="{bx}" y="{by}" width="{bw}" height="34" fill="{GOLD}"/>
       <text x="{bx + 16}" y="{by + 23}" class="pir" font-size="20" fill="{INK}">CREW ID</text>
-      <text x="{bx + bw - 16}" y="{by + 22}" text-anchor="end" class="mono" font-size="10" fill="{INK}">No. 2020-016</text>
+      <text x="{bx + bw - 16}" y="{by + 22}" text-anchor="end" class="mono" font-size="10" fill="{INK}">No. 0007</text>
       <rect x="{bx + 60}" y="{by + 46}" width="120" height="120" rx="12" fill="#e3c992"/>
       <image href="data:image/png;base64,{portrait_b64}" x="{bx + 32}" y="{by + 46}" width="176" height="{176 * 334 / 360:.0f}" clip-path="url(#c-photo)"/>
       <rect x="{bx + 60}" y="{by + 46}" width="120" height="120" rx="12" fill="none" stroke="{GOLD}" stroke-opacity=".5" stroke-width="2"/>
@@ -500,11 +507,11 @@ def build_crew(portrait_b64: str, data: dict) -> str:
         <animate attributeName="stroke-dashoffset" values="0;-460" dur="3.5s" begin="0s" repeatCount="indefinite"/>
       </rect>
       <text x="{bx + bw / 2}" y="{by + 194}" text-anchor="middle" class="gro" font-size="20" font-weight="700" fill="{TEXT}">Shubham Jindal</text>
-      <text x="{bx + bw / 2}" y="{by + 214}" text-anchor="middle" class="mono" font-size="11" fill="{GOLD}">CAPTAIN · FULL-STACK</text>
+      <text x="{bx + bw / 2}" y="{by + 214}" text-anchor="middle" class="mono" font-size="11" fill="{GOLD}">TECH LEAD · BACKEND</text>
       <rect x="{bx + 24}" y="{by + 228}" width="34" height="26" rx="5" fill="url(#c-chip)"/>
       <path d="M{bx + 24},{by + 241} h34 M{bx + 41},{by + 228} v26 M{bx + 32},{by + 228} v8 M{bx + 50},{by + 246} v8" stroke="#8a6420" stroke-width="1"/>
       <text x="{bx + 70}" y="{by + 240}" class="mono" font-size="10" fill="{MUTED}">HOME PORT</text>
-      <text x="{bx + 70}" y="{by + 254}" class="mono" font-size="11" fill="{TEXT}">github.com/ShubJ</text>
+      <text x="{bx + 70}" y="{by + 254}" class="mono" font-size="11" fill="{TEXT}">shubhamjindal.vercel.app</text>
       {"".join(bars)}
       <rect x="{bx - bw}" y="{by}" width="{bw}" height="{bh}" fill="url(#c-foil)" transform="skewX(-20)">
         <animateTransform attributeName="transform" type="translate" values="0 0;0 0;{bw * 2.6:.0f} 0" keyTimes="0;.55;1" dur="4.5s" begin="0s" repeatCount="indefinite" additive="sum"/>
@@ -513,10 +520,10 @@ def build_crew(portrait_b64: str, data: dict) -> str:
   </g>
 </g>
 {"".join(kpi_els)}
-<text x="400" y="170" class="mono" font-size="11" fill="{MUTED}" letter-spacing="2">CODE BY LANGUAGE</text>
-{"".join(bar_els)}
-<text x="400" y="352" class="mono" font-size="11" fill="{MUTED}" letter-spacing="2">CAPTAIN'S LOG</text>
-<circle cx="526" cy="348" r="4" fill="{RED}"><animate attributeName="opacity" values="1;.2;1" dur="1.4s" begin="0s" repeatCount="indefinite"/></circle>
+<text x="400" y="166" class="mono" font-size="11" fill="{MUTED}" letter-spacing="2">VOYAGES</text>
+{"".join(voy_els)}
+<text x="400" y="356" class="mono" font-size="11" fill="{MUTED}" letter-spacing="2">CAPTAIN'S LOG</text>
+<circle cx="526" cy="352" r="4" fill="{RED}"><animate attributeName="opacity" values="1;.2;1" dur="1.4s" begin="0s" repeatCount="indefinite"/></circle>
 {"".join(now_els)}
 </g>
 {card_border(u, W, H)}"""
@@ -527,9 +534,9 @@ def build_connect(pointing_b64: str, repo_count: int) -> str:
     W, H = 1000, 400
     u = "k"
     cards = [
-        ("github", "github.com/ShubJ", f"{repo_count} repos, mostly TypeScript"),
-        ("telegram", "Bots on board", "Telegram, Instagram, AI news"),
-        ("claude", "Building with AI", "multi-agent systems on Claude"),
+        ("vercel", "shubhamjindal.vercel.app", "portfolio, projects and resume"),
+        ("linkedin", "linkedin.com/in/shubhamj130", "let's talk backend and AI"),
+        ("gmail", "jindalshubham130@gmail.com", "open to collabs"),
     ]
     els = []
     for i, (ic, title, sub) in enumerate(cards):
@@ -539,7 +546,7 @@ def build_connect(pointing_b64: str, repo_count: int) -> str:
             f'<g transform="translate(470,{y})">'
             f'<rect width="470" height="74" rx="16" fill="#0f1c33" stroke="{GOLD}" stroke-opacity=".3"/>'
             f'<g transform="translate(40,37)">{icon_badge(ic, 22)}</g>'
-            f'<text x="78" y="32" class="gro" font-size="19" font-weight="700" fill="{TEXT}">{title}</text>'
+            f'<text x="78" y="32" class="gro" font-size="18" font-weight="700" fill="{TEXT}">{title}</text>'
             f'<text x="78" y="54" class="mono" font-size="12" fill="{MUTED}">{sub}</text>'
             f'<g><path d="M420,37 h22 m-8,-8 l8,8 l-8,8" fill="none" stroke="{col if col != "#FFFFFF" else GOLD}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'
             f'<animateTransform attributeName="transform" type="translate" values="0 0;8 0;0 0;0 0" keyTimes="0;.15;.3;1" dur="2.4s" begin="{i * 0.3:.1f}s" repeatCount="indefinite"/></g>'
