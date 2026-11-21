@@ -1,5 +1,5 @@
 <p align="center">
-  <a><img src="./hero.svg?v=2" width="100%" alt="Shubham Jindal, backend tech lead. Wanted poster: code or alive, 7+ years at sea."/></a>
+  <picture><img src="./hero.svg?v=2" width="100%" alt="Shubham Jindal, backend tech lead. Wanted poster: code or alive, 7+ years at sea."/></picture>
 </p>
 
 <p align="center">
@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a><img src="./stack.svg?v=2" width="100%" alt="Tech stack: Node.js, TypeScript, NestJS, MySQL, MongoDB, Redis, Kafka, AWS, Docker, microservices, event-driven architecture"/></a>
+  <picture><img src="./stack.svg?v=2" width="100%" alt="Tech stack: Node.js, TypeScript, NestJS, MySQL, MongoDB, Redis, Kafka, AWS, Docker, microservices, event-driven architecture"/></picture>
 </p>
 
 <p align="center">
-  <a><img src="./crew.svg?v=2" width="100%" alt="Crew ID card, 7+ years in backend, career timeline and highlights"/></a>
+  <picture><img src="./crew.svg?v=2" width="100%" alt="Crew ID card, 7+ years in backend, career timeline and highlights"/></picture>
 </p>
 
 ### Side projects
@@ -32,11 +32,11 @@ Most of my work lives in private company repos. The full story is on my [portfol
 ### My commits, as a city at night
 
 <p align="center">
-  <a><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution calendar"/></a>
+  <picture><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution calendar"/></picture>
 </p>
 
 <p align="center">
-  <a><img src="./connect.svg?v=2" width="100%" alt="Set sail together: portfolio, LinkedIn, email"/></a>
+  <picture><img src="./connect.svg?v=2" width="100%" alt="Set sail together: portfolio, LinkedIn, email"/></picture>
 </p>
 
 <p align="center">
