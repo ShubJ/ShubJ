@@ -1,0 +1,7 @@
+.venv/
+assets/*.png
+preview.html
+build/
+data/
+fonts/
+icons/
